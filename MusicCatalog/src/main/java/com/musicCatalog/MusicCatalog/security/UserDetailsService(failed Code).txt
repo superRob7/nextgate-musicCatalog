@@ -1,0 +1,38 @@
+package com.musicCatalog.MusicCatalog.security;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import com.musicCatalog.MusicCatalog.models.CustomUserDetails;
+import com.musicCatalog.MusicCatalog.models.User;
+import com.musicCatalog.MusicCatalog.repositorys.UserRepository;
+
+@Service
+public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
+
+	@Autowired
+	UserRepository userRepository;
+	
+	
+	@Override
+	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+		
+		User user =  userRepository.findByUserName(userName);
+		
+		CustomUserDetails userDetails = null;
+		if(user !=null)
+		{
+			userDetails = new CustomUserDetails();
+			userDetails.setUser(user);
+				}
+		else {
+			throw new UsernameNotFoundException("user not exits with the name" + userName);
+		}
+		
+	
+		return userDetails;
+	}
+
+}
