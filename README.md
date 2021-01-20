@@ -78,6 +78,9 @@ The frontend is a React app that runs on port '3000' and can be started by navig
 * 'http://localhost:3000/albums/add
     * '/0' acts as a create
     * '/{id}' acts as an update 
+    
+## Database
+The project does not read in the supplied text file to populate the database, so I have included a copy of the database with all of the values present. 
 
 ## Json Examples 
 * Add Singer 
