@@ -54,7 +54,9 @@ See bottom of this page for examples of the json file needed to create & update 
         * Deletes an album with a given id
 
 ## Frontend
-The frontend is a React app that runs on port '3000' and can be started by navigating to the directory that contains the app and executing the 'npm start' command. This app can view the singer and albums within the database. Singers can be added to the database, however, albums can not be created. Updating singer and albums are forbidden from the app due to failed authentication implementation.  The app was created using the 'npx create-react-app' which does not inject all of the dependance needed. The dependance that are required are as follows: 
+The frontend is a React app that is to large for Github to hold, so I have extracted the components that I built. To build a react project use the 'npx create-react-app' which does not inject all of the dependance needed. The components can then be copied into the 'src' directory, the 'app.js' file should be replaced. 
+
+### Required Dependencies
 
 * 'npm install react-bootstrap'
     * Adding the bootstrap components
@@ -66,6 +68,8 @@ The frontend is a React app that runs on port '3000' and can be started by navig
     * Adds the routing capability of the app 
 * 'npm install axios'
     * Used for calling the backend API
+
+ The app can be started executing the 'npm start' command which will launce the app using port '3000'. This app can view the singer and albums within the database. Singers can be added to the database, however, albums can not be created. Updating singer and albums are forbidden from the app due to failed authentication implementation.  The app was created using the 'npx create-react-app' which does not inject all of the dependance needed. The dependance that are required are as follows: 
 
 ### Routes 
 * 'http://localhost:3000/singers
